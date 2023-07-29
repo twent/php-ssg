@@ -1,0 +1,17 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+if (file_exists(__DIR__.'/vendor/autoload.php')) {
+    require __DIR__.'/vendor/autoload.php';
+}
+
+use Symfony\Component\Console\Application;
+use Twent\Ssg\Commands\Build;
+
+$application = new Application('SSG', '0.0.1');
+
+$application->add(new Build());
+
+$application->run();
